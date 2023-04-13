@@ -9,7 +9,11 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return "This is a simple search engine! \nType \"/search\" or \"/?add\" with a query \"?s=<item>\" to begin. \nHave fun!";
+            return """
+                This is a simple search engine!
+                Type \"/search\" or \"/?add\" with a query \"?s=<item>\" to begin.
+                Have fun!
+                """;
         } else if (url.getPath().contains("/add")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
